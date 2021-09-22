@@ -24,7 +24,7 @@ const requestHandler = (req, res) => {
     res.write('</html>');
     return res.end();
   }
-  // Send an HTML response with a "Page not found" message
+
   if (url === '/create-user' && method === "POST") {
     const body = [];
     req.on('data', (chunk) => {
@@ -45,17 +45,3 @@ const requestHandler = (req, res) => {
 };
 exports.handler = requestHandler;
 exports.someText = 'Welcome to CSE341\'\s assignment Prove 01!';
-
-// if (url === '/create-user') {
-//   const body = [];
-//   req.on('data', (chunk) => {
-//     body.push(chunk);
-//   });
-//   req.on('end', () => {
-//     const parsedBody = Buffer.concat(body).toString();
-//     console.log(parsedBody.split('=')[1]); //username=whatever-the-user-entered
-//   });
-//   res.statusCode = 302;
-//   res.setHeader('Location', '/');
-//   res.end();
-// }
