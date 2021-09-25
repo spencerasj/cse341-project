@@ -11,11 +11,11 @@ const {
 
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
+router.get('/shop', (req, res, next) => {
   const products = adminData.products;
   res.render('shop', {
     prods: products,
-    path: '/',
+    path: '/shop',
     pageTitle: 'Shop',
     hasProducts: products.length > 0,
     activeShop: true,

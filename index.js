@@ -34,7 +34,7 @@ app
   .use('/ta03', ta03Routes)
   .use('/ta04', ta04Routes)
   .use('/admin', adminData.routes)
-  .use(shopRoutes)
+  .use('/shop', shopRoutes)
   .get('/', (req, res, next) => {
     // This is the primary index, always handled last.
     res.render('pages/index', {
