@@ -6,12 +6,36 @@
 <body>
   <%- include('includes/navigation.ejs') %>
   <main>
+    <!-- Form for adding book-->
     <form class="product-form" action="/admin/add-product" method="POST">
       <div class="form-control">
         <label for="title">Title</label>
         <input type="text" name="title" id="title">
+        <label for="price">Price</label>
+        <input type="number" name="price" id="price">
+        <div class="radio">
+          <p>Condition of Book: </p>
+          <input type="radio" id="new" name="condition" value="new">
+          <label for="new">New</label><br>
+          <input type="radio" id="likeNew" name="condition" value="like new">
+          <label for="likeNew">Like New</label><br>
+          <input type="radio" id="used" name="condition" value="used">
+          <label for="used">Used</label>
+        </div>
+        <!-- <label for="condition">Condition</label>
+        <input type="text" name="condition" id="condition"> -->
       </div>
+
       <button type="submit">Add Product</button>
     </form>
+    <!-- Form for deleting book -->
+    <hr>
+    <form class="product-form" action="/admin/remove-product" method="POST">
+      <label for="remProd">Book title to remove</label><br>
+      <input type="text" id="remProd" name="remProd">
+      <button type="submit">Remove Book</button>
+    </form>
+    <!-- Form for requirement 03 -->
+    </div>
   </main>
   <%- include('includes/end.ejs') %>

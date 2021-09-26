@@ -24,3 +24,4 @@ router.get('/shop', (req, res, next) => {
 });
 
 module.exports = router;
+//exports.routes = router;
