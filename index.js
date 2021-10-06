@@ -18,6 +18,7 @@ const ta04Routes = require('./routes/ta04');
 //Routes for prove 02 assignments
 const shopRoutes = require('./prove02/routes/shop');
 const adminData = require('./prove02/routes/admin');
+const prove03 = require('./prove03');
 
 
 app
@@ -36,6 +37,8 @@ app
   .use('/ta04', ta04Routes)
   .use('/admin', adminData.routes)
   .use(shopRoutes)
+  .use('/prove03', prove03)
+
   .get('/', (req, res, next) => {
     // This is the primary index, always handled last.
     res.render('pages/index', {
